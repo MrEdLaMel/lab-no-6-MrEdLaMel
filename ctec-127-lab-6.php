@@ -54,7 +54,7 @@
         }
         return $convertedTemp;
 
-    } // end function
+    } // end functio
 
     // Logic to check for POST and grab data from $_POST
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
