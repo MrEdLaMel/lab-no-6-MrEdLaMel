@@ -25,6 +25,35 @@
 
         // You need to develop the logic to convert the temperature based on the selections and input made
 
+        if ($unit1 == 'celsius' && $unit2 == 'fahrenheit') {
+            $convertedTemp = $temp * 9/5 + 32;
+        } 
+        else if ($unit1 == 'celsius' && $unit2 == 'kelvin') {
+            $convertedTemp = $temp + 273.15;
+        } 
+        else if ($unit1 == 'fahrenheit' && $unit2 == 'celsius') {
+            $convertedTemp = ($temp - 32) * 5/9;
+        } 
+        else if ($unit1 == 'fahrenheit' && $unit2 == 'kelvin') {
+            $convertedTemp = ($temp + 459.67) * 5/9;
+        } 
+        else if ($unit1 == 'kelvin' && $unit2 == 'fahrenheit') {
+            $convertedTemp = $temp * 9/5 - 459.67;
+        } 
+        else if ($unit1 == 'kelvin' && $unit2 == 'celsius') {
+            $convertedTemp = $temp - 273.15;
+        } 
+        else if ($unit1 == "celsius" && $unit2 == 'celsius') {
+            $convertedTemp = $temp;
+        }
+        else if ($unit1 == "fahrenheit" && $unit2 == 'fahrenheit') {
+            $convertedTemp = $temp;
+        }
+        else if ($unit1 == "kelvin" && $unit2 == 'kelvin') {
+            $convertedTemp = $temp;
+        }
+        return $convertedTemp;
+
     } // end function
 
     // Logic to check for POST and grab data from $_POST
@@ -39,8 +68,17 @@
         $originalUnit = $_POST['originalunit'];
         $conversionUnit = $_POST['conversionunit'];
         $convertedTemp = convertTemp($originalTemperature, $originalUnit, $conversionUnit);
-    } // end if
+    } else {
+        $originalUnit = null;
+        $originalTemperature = null;
+        $conversionUnit = null;
+        $convertedTemp = null;
+    }
 
+    // echo "originalTemperature = " . $originalTemperature . "<br>";
+    // echo "originalUnit = " . $originalUnit . "<br>" ;
+    // echo "conversionUnit = " . $conversionUnit . "<br>";
+    // echo "convertedTemp = " . $convertedTemp . "<br>"
     ?>
     <!-- Form starts here -->
     <h1>Temperature Converter</h1>
@@ -54,25 +92,25 @@
                                         ?>" name="originaltemp" size="14" maxlength="7" id="temp">
 
             <select name="originalunit">
-                <option value="--Select--">--Select--</option>
-                <option value="celsius">Celsius</option>
-                <option value="fahrenheit">Fahrenheit</option>
-                <option value="kelvin">Kelvin</option>
+                <option value="--Select--" <?= $originalUnit == "-" ? "selected" : "" ?>>--Select--</option>
+                <option value="celsius" <?= $originalUnit == "celsius" ? "selected" : "" ?>>Celsius</option>
+                <option value="fahrenheit" <?= $originalUnit == "fahrenheit" ? "selected" : "" ?>>Fahrenheit</option>
+                <option value="kelvin" <?= $originalUnit == "kelvin" ? "selected" : "" ?>>Kelvin</option>
             </select>
         </div>
-
+        
         <div class="group">
             <label for="convertedtemp">Converted Temperature</label>
-            <input type="text" value="" name="convertedtemp" size="14" maxlength="7" id="convertedtemp" readonly>
+            <input type="text" value="<?= $convertedTemp ?>" name="convertedtemp" size="14" maxlength="7" id="convertedtemp" disabled>
 
             <select name="conversionunit">
-                <option value="--Select--">--Select--</option>
-                <option value="celsius">Celsius</option>
-                <option value="fahrenheit">Fahrenheit</option>
-                <option value="kelvin">Kelvin</option>
+                <option value="--Select--"<?= $conversionUnit == "-" ? "selected" : "" ?>>--Select--</option>
+                <option value="celsius" <?= $conversionUnit == "celsius" ? "selected" : "" ?>>Celsius</option>
+                <option value="fahrenheit"<?= $conversionUnit == "fahrenheit" ? "selected" : "" ?>>Fahrenheit</option>
+                <option value="kelvin"<?= $conversionUnit == "kelvin" ? "selected" : "" ?>>Kelvin</option>
             </select>
         </div>
-        <input type="submit" value="Convert" />
+        <input type="submit" value="Convert"/>
     </form>
 </body>
 
