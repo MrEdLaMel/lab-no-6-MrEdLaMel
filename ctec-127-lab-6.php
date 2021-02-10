@@ -25,8 +25,8 @@
 
         // You need to develop the logic to convert the temperature based on the selections and input made
         $convertedTemp = 0;
-        $unit1 = 0;
-        $unit2 = 0;
+        $unit1 == 0;
+        $unit2 == 0;
 
         if ($unit1 == 'celsius' && $unit2 == 'fahrenheit') {
             $convertedTemp = $temp * 9 / 5 + 32;
