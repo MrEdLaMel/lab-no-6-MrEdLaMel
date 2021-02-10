@@ -72,7 +72,7 @@
     // echo "convertedTemp = " . $convertedTemp . "<br>"
     ?>
     <!-- Form starts here -->
-    <p>testing</p>
+    <p>testings</p>
     <h1>Temperature Converter</h1>
     <h4>CTEC 127 - PHP with SQL 1</h4>
     <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>">
