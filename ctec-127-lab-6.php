@@ -23,7 +23,7 @@
         // Kelvin to Fahrenheit = T(K) × 9/5 - 459.67
         // Kelvin to Celsius = T(K) - 273.15
 
-        // You need to develop the logic to convert the temperature based on the selections and input mades
+        // You need to develop the logic to convert the temperature based on the selections and input made
 
         if ($unit1 == 'celsius' && $unit2 == 'fahrenheit') {
             $convertedTemp = $temp * 9 / 5 + 32;
