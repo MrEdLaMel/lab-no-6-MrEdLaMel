@@ -23,37 +23,28 @@
         // Kelvin to Fahrenheit = T(K) × 9/5 - 459.67
         // Kelvin to Celsius = T(K) - 273.15
 
-        // You need to develop the logic to convert the temperature based on the selections and input made
+        // You need to develop the logic to convert the temperature based on the selections and input mades
 
         if ($unit1 == 'celsius' && $unit2 == 'fahrenheit') {
-            $convertedTemp = $temp * 9/5 + 32;
-        } 
-        else if ($unit1 == 'celsius' && $unit2 == 'kelvin') {
+            $convertedTemp = $temp * 9 / 5 + 32;
+        } else if ($unit1 == 'celsius' && $unit2 == 'kelvin') {
             $convertedTemp = $temp + 273.15;
-        } 
-        else if ($unit1 == 'fahrenheit' && $unit2 == 'celsius') {
-            $convertedTemp = ($temp - 32) * 5/9;
-        } 
-        else if ($unit1 == 'fahrenheit' && $unit2 == 'kelvin') {
-            $convertedTemp = ($temp + 459.67) * 5/9;
-        } 
-        else if ($unit1 == 'kelvin' && $unit2 == 'fahrenheit') {
-            $convertedTemp = $temp * 9/5 - 459.67;
-        } 
-        else if ($unit1 == 'kelvin' && $unit2 == 'celsius') {
+        } else if ($unit1 == 'fahrenheit' && $unit2 == 'celsius') {
+            $convertedTemp = ($temp - 32) * 5 / 9;
+        } else if ($unit1 == 'fahrenheit' && $unit2 == 'kelvin') {
+            $convertedTemp = ($temp + 459.67) * 5 / 9;
+        } else if ($unit1 == 'kelvin' && $unit2 == 'fahrenheit') {
+            $convertedTemp = $temp * 9 / 5 - 459.67;
+        } else if ($unit1 == 'kelvin' && $unit2 == 'celsius') {
             $convertedTemp = $temp - 273.15;
-        } 
-        else if ($unit1 == "celsius" && $unit2 == 'celsius') {
+        } else if ($unit1 == "celsius" && $unit2 == 'celsius') {
             $convertedTemp = $temp;
-        }
-        else if ($unit1 == "fahrenheit" && $unit2 == 'fahrenheit') {
+        } else if ($unit1 == "fahrenheit" && $unit2 == 'fahrenheit') {
             $convertedTemp = $temp;
-        }
-        else if ($unit1 == "kelvin" && $unit2 == 'kelvin') {
+        } else if ($unit1 == "kelvin" && $unit2 == 'kelvin') {
             $convertedTemp = $temp;
         }
         return $convertedTemp;
-
     } // end functios
 
     // Logic to check for POST and grab data from $_POST
@@ -98,19 +89,19 @@
                 <option value="kelvin" <?= $originalUnit == "kelvin" ? "selected" : "" ?>>Kelvin</option>
             </select>
         </div>
-        
+
         <div class="group">
             <label for="convertedtemp">Converted Temperature</label>
             <input type="text" value="<?= $convertedTemp ?>" name="convertedtemp" size="14" maxlength="7" id="convertedtemp" disabled>
 
             <select name="conversionunit">
-                <option value="--Select--"<?= $conversionUnit == "-" ? "selected" : "" ?>>--Select--</option>
+                <option value="--Select--" <?= $conversionUnit == "-" ? "selected" : "" ?>>--Select--</option>
                 <option value="celsius" <?= $conversionUnit == "celsius" ? "selected" : "" ?>>Celsius</option>
-                <option value="fahrenheit"<?= $conversionUnit == "fahrenheit" ? "selected" : "" ?>>Fahrenheit</option>
-                <option value="kelvin"<?= $conversionUnit == "kelvin" ? "selected" : "" ?>>Kelvin</option>
+                <option value="fahrenheit" <?= $conversionUnit == "fahrenheit" ? "selected" : "" ?>>Fahrenheit</option>
+                <option value="kelvin" <?= $conversionUnit == "kelvin" ? "selected" : "" ?>>Kelvin</option>
             </select>
         </div>
-        <input type="submit" value="Convert"/>
+        <input type="submit" value="Convert" />
     </form>
 </body>
 
