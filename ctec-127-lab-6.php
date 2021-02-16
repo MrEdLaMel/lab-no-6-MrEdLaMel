@@ -47,7 +47,7 @@
         } else if ($unit1 == 'kelvin' && $unit2 == 'kelvin') {
             $convertedTemp = $temp;
         } else if ($unit1 == '--Select--' && $unit2 == '--Select--') {
-            $convertedTemp = "recheck your units";
+            echo "recheck your units";
         }
         return $convertedTemp;
     } // end functios
