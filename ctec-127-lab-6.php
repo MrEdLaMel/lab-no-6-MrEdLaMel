@@ -72,7 +72,7 @@
     }
 
     // echo "originalTemperature = " . $originalTemperature . "<br>";
-    // echo "originalUnit = " . $originalUnit . "<br>" ;
+    // eccho "originalUnit = " . $originalUnit . "<br>" ;
     // echo "conversionUnit = " . $conversionUnit . "<br>";
     // echo "convertedTemp = " . $convertedTemp . "<br>"
     ?>
