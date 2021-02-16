@@ -58,6 +58,7 @@
         // You can then use these variables to help you make the form sticky
         // then call the convertTemp() function
         // Once you have the converted temperature you can place PHP within the converttemp field using PHP
+
         // I coded the sticky code for the originaltemp field for you
 
         $originalTemperature = $_POST['originaltemp'];
